@@ -48,3 +48,27 @@ Once you select if you would like to use a template, the next page will allow yo
 When you create a new project, it should look like the following:
 
 ![Editor](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/UE%20Editor%20Example.PNG)
+
+### Levels
+
+_Definition:_ A collection of objects and their properties that together define their area of gameplay.
+
+A single game will consist of many many levels.
+
+In UE, you can create a new level by going to File > New Level.  This will bring up the new level screen which contains options for different defaults you can use.
+
+![Editor](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/LevelDefaultSelector.PNG)
+
+UE contains assets which are basically anything that is used to develop your game.
+
+### Actors
+
+Definition: An actor is any object that can be added to the level.  They can be physical objects in your level or other objects that define different components of your game.
+
+_Static meshes_ refer to meshes with no moving parts.
+
+_Geometry Brushes (or just Brush) are actors represented in 3D space.  Brushes are only meant to be basic 3D shapes vs. Meshes which can be complex.  Brushes are generally not as performant as meshes.  They are used to prototype levels.
+
+UE has materials which make an object look like it has certain texture and lighting characteristics.
+
+## Level Editor
