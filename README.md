@@ -29,7 +29,11 @@ There are (4) defaults that you can use to get started creating in UE4.
 3. Architecture, Engineering, and Construction
 4. Automative, Product Design, and Manufacturing
 
+![Project Settings](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/Project%20Settings%20Screen.PNG)]
+
 After selecting the type, you can further select which kind of game you would like to create based on several other templates.
+
+![Templates](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/Project%20Template%20Screen.PNG)
 
 Once you select if you would like to use a template, the next page will allow you to select even more different options such as:
 
@@ -39,3 +43,8 @@ Once you select if you would like to use a template, the next page will allow yo
 4. Target Platform
 5. Start Content
 
+![Project Types](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/Project%20Type%20Screen.PNG)
+
+When you create a new project, it should look like the following:
+
+![Editor](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/UE%20Editor%20Example.PNG)
