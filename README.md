@@ -110,9 +110,9 @@ Place mode is grouped into different categories:
 
 To quickly find a specific actor, you can type in the search bar at the top.
 
-### Viewport Navigation
+## Viewport Navigation
 
-#### Movement
+### Movement
 
 The F11 key can be used to maximize the viewport on your screen.
 
@@ -130,7 +130,7 @@ Holding the alt key while using the mouse will default to the viewport settings 
 
 In the upper right section of the viewport, you can change the camera speed using the camera speed dropdown.
 
-#### Modifying Objects
+### Modifying Objects
 
 There are different options in the upper right to move, rotate, or scale the currently selected object.  Shortcut keys are w, e, and r respectively.
 
@@ -144,7 +144,7 @@ To make a copy of an actor, select it and hit ctrl + w or while using the move t
 
 World Space vs Local Space affect the axis and directions that objects will be edited in the world.  The scale tool will always be in world space.
 
-#### Snapping
+### Snapping
 
 The end key will allow you automatically snap an actor down to the nearest surface.
 
@@ -156,7 +156,7 @@ Grid snapping can be used to align objects across differences.  An incremental d
 
 Scale snapping functions similarly to the other incrementing options but in relation to scaling of objects.
 
-#### Level Viewing
+### Level Viewing
 
 The F11 key lets you toggle full screen mode in the editor (immersive mode).
 
@@ -170,7 +170,7 @@ Show check boxes allow you hide certain objects in your viewport.  This is usefu
 
 ctrl + shift + p allows you to pilot certain objects (such as lights) to get a first person view of what they can see.  This can be an easier placement method that transforming and rotating in your scene.
 
-#### Content Browser
+### Content Browser
 
 The content browser gives you the ability to drag your own custom actors into the viewport.
 
@@ -190,7 +190,7 @@ Collections let you group objects by parameters that you define.  I.e. a yellow 
 
 You can navigate to the actor in the content browser while in the details window by clicking on the find button for that specific component.  You can also lock the window to make clicking find open a new window to that asset.
 
-#### Details Panel
+### Details Panel
 
 The details panel gives you information about an actor that you currently have selected.  
 
@@ -202,7 +202,7 @@ The property matrix allows you to edit the value of multiple actors at once.
 
 The transform component is common to all actors.  It provides you another way to modify actors in your level.  The yellow arrows to the right of the values will reset the values to a default.  You can change how the values are modified relative to the world or parent by selecting the dropdown on the property.  The mobility category allows you to change the type of the actor.
 
-#### World Outliner Panel
+### World Outliner Panel
 
 The world outliner panel is an organized list of all actors in the level.  
 
@@ -212,3 +212,66 @@ The eye icon to the left of the actor allows you to toggle the visibility of it.
 
 You can drag actors onto other actors by dragging them onto other actors.  This means that when you move the parent it will move all the children.  Additionally, you can group actors by selecting and hitting ctrl + g.  Groups can be locked/unlocked to allow for individual editing of actors within a group.
 
+## Actors
+
+### Static Meshes
+
+In UE there are static meshes and skeletal meshes.  Static meshes cannot move within the scene.  Skeletal meshes allow for actors with moving parts.
+
+The static mesh component on an actor can be used to replace a mesh with another mesh.
+
+By default, static meshes do not interact with physics.  To allow an object to interact with physics you need to set the mobility to movable and enable the simulate physics checkbox.
+
+### Brushes
+
+Brushes are used for creating basic geometry shapes.  Meshes only get stored in memory once whereas geometry brushes get stored 1 per geometry.  They are useful for prototyping and not meant to be used in the final product.
+
+The hollow checkbox and options can be used to quickly create rooms and buildings.  Certain parameters will only be available if this option is selected.
+
+### Materials
+
+Materials are not actors, but are an important property of actors.  Materials give actors a texture and lighting characteristics.  Materials can be applied to brushes as well as meshes.
+
+A single mesh may have multiple materials assigned to it.  Materials coordinates are labeled u and v.  When you scale an actor the material will also be scaled to fit the mesh.  
+
+### Lights
+
+In UE a ligth is an actor that generates a light in the level.  There are five types of light actors that you can use: 
+
+1. Directional Light: Emulates ligth coming from a long distance away.  Primarily used for sunlight and moonlight.
+2. Point Light: Produces light that emanates in all directions.
+3. Spot Light: Generates ligth in the shape of a cone.
+4. Rect Light: Projects lights in a plane.  I.e. tube lights, tvs, etc.
+5. Sky Light: Represents light that is reflected (the faint glow of the atmosphere).
+
+Changes in lights is not produced until being built in the editor.  This helps optimize performance in the editor.
+
+Lights have several properties that can be modified including the mobility and transform.  Each type of light has additional unique parameters that can be adjusted.
+
+![Light Properties](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/LightProperties.PNG)
+
+### Atmospheric Fog
+
+UE provides a few types of fog that can be added to your level: Atmospheric Fog and Exponential Height Fog.
+
+An atmospheric fog actor makes the appearance of outdoor atmosphere.  This can be combined with a directional light to simulate actual sun location.  Atmospheric fog has additinal properties that you can modify.
+
+![Atmosphere Properties](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/AtmosphereProperties.PNG)
+
+### Player Start
+
+The Player Start Actor defines where a player will start in your level.  If you want to test out starting from a different location, you can use the dropdown and select Play From Here.  Alternatively you can use the dropdown next to the Play Button and select Spawn Player at Current Camera Position.
+
+### Components
+
+Components allow you to change the properties of objects.  You can add new components through the Add Component button.  There is a convenient search functionality for searching by keywords.  When you add components in this way they are added as sub components that have their own unique properties.
+
+Some components are only available as components and not as their own standalone actors, i.e. rotating an actor.
+
+### Volumes
+
+In UE, a volume is a 3D area of space and is invisible to the player.  They have some functionality tied to them such as damaging the player when they enter.  There are many volumes built-in to UE by default.
+
+Trigger volumes are a highly useful volume that can be used to activate certain events when the player enters an area.
+
+Pain Causing Volumes have the player take damage when they enter the volume.  Damage is a built-in construct for UE.
