@@ -72,3 +72,143 @@ _Geometry Brushes (or just Brush) are actors represented in 3D space.  Brushes a
 UE has materials which make an object look like it has certain texture and lighting characteristics.
 
 ## Level Editor
+
+### Overview
+
+Unreal Engine: An application that is used to run games.
+
+Unreal Editor: Application for creating games.
+
+Level Editor: An editor inside of the Unreal editor.  This actually the default screen for the Unreal Editor.
+
+Double clicking on assets in the editor will bring up the editor associated with that type of asset.  I.e. double clicking a material will open the material editor.
+
+There are different components of the level editor in the default layout.
+1. Viewport: used to give a visual representation of the game
+2. Toolbar: Gives access to common functions
+3. Content Browser: Storing and organizing
+4. Modes Panel: Allows you to change the mode of the editor that make it easier to complete a discrete task.  I.e. 
+5. World Outliner: Lists and groups the objects in the level
+6. Details: View and edit parameters of the currently selected object
+
+### Place Mode
+
+Place Mode is used to place actors into your level.  Place mode is used for common generic actors, while the content browser is used to place custom actors.
+
+To place an actor into your level, simply click on it in the Place Actors window and drag it into your level.  You can delete it by hitting the delete key while it is selected.
+
+Place mode is grouped into different categories:
+
+1. Recently Placed: Actors that you have used recently.
+2. Basic: Basic actors
+3. Lights: A light in the UE is a light projecting from a source. 
+4. Cinematic: Tools to help create rendered 3D videos (cutscenes).
+5. Visual Effects: Contain actors that add a variety of FX.
+6. Geometry: Contain basic shapes.
+7. Volumes: A 3D area of space that provide some functionality.  I.e. preventing a player from going somewhere.
+8. All Classes: Contains EVERYTHING plus some that didn't fit into other tabs.
+
+To quickly find a specific actor, you can type in the search bar at the top.
+
+### Viewport Navigation
+
+#### Movement
+
+The F11 key can be used to maximize the viewport on your screen.
+
+Left clicking in the viewport allows you to rotate left or right and pan in the x and z direction.
+
+Holding the left and right mouse buttons down or the middle mouse button down allow you to move in the y and z plane.
+
+The right mouse button allows you to rotate the camera in any direction.
+
+You can use the WASD keys while right clicking to move around in the viewport.  You can use the q and e keys to move up and down and the z and c keys to zoom in and out.  Zooming is only temporary though.
+
+Clicking thee f key while an object is selected will focus the viewport on that object.
+
+Holding the alt key while using the mouse will default to the viewport settings found in Autodesk Maya.
+
+In the upper right section of the viewport, you can change the camera speed using the camera speed dropdown.
+
+#### Modifying Objects
+
+There are different options in the upper right to move, rotate, or scale the currently selected object.  Shortcut keys are w, e, and r respectively.
+
+You can move objects by dragging the area in the direction that you want to move.  You can also move in multiple axis by dragging the connector between them.  
+
+You can select multiple actors by control clicking each one that you want to edit.
+
+Holding down the shift key while moving an object will also move the camera with that object.
+
+To make a copy of an actor, select it and hit ctrl + w or while using the move tool, his the alt key.  This also works with the rotate tool to create rotations of the same object.
+
+World Space vs Local Space affect the axis and directions that objects will be edited in the world.  The scale tool will always be in world space.
+
+#### Snapping
+
+The end key will allow you automatically snap an actor down to the nearest surface.
+
+![Viewport Upper Right](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/ViewportUpperRight.PNG)
+
+Surface snapping can be enabled with the surface snapping option in the upper right of the viewport. It only works when snapping in 3 dimensions.  Rotate to surface normal changes the rotation to match the surface normal.  While off it will maintain its rotation.  Surface offset tells the editor how far to put the actor to the surface of the object.
+
+Grid snapping can be used to align objects across differences.  An incremental distance drop down can be modified to tell where to snap the object.  The snap unit is in cm.
+
+Scale snapping functions similarly to the other incrementing options but in relation to scaling of objects.
+
+#### Level Viewing
+
+The F11 key lets you toggle full screen mode in the editor (immersive mode).
+
+The upper left options let you change different aspects of the level such as lighting.  I.e. Lit, Unlit, Wireframe.
+
+![Viewport Upper Left](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/ViewportUpperLeft.PNG)
+
+Specific orthographic views can be selected to view the level in a certain aspect.  i.e. top, left, right, etc.  When first selected they default to wireframe, but you can change it.
+
+Show check boxes allow you hide certain objects in your viewport.  This is useful for hiding clutter while focusing on certain aspects of you level.
+
+ctrl + shift + p allows you to pilot certain objects (such as lights) to get a first person view of what they can see.  This can be an easier placement method that transforming and rotating in your scene.
+
+#### Content Browser
+
+The content browser gives you the ability to drag your own custom actors into the viewport.
+
+![ContentBrowser](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/ContentBrowser.PNG)
+
+The sources toggle button will toggle on/off a hierarchy of assets to help you navigate your project structure.  You can also search using the search bar.  Additionally, you can use the filters button to filter by file types or other parameters.  The top toolbar will show you the "breadcrumbs" that it took to get to that file.
+
+You can add new assets into the content browser by using the "Add New" button in the upper left.
+
+The import button lets you add your own content into the content browser.  Contents that are added to content browser are not saved until you click save all on the top toolbar.
+
+In the bottom right you can change how your content is displayed in the content browser window.  i.e. tiles, list, folders, etc.
+
+There are also different options to toggle on/off specific content such as in-development content, engine code, or plug-in code.
+
+Collections let you group objects by parameters that you define.  I.e. a yellow chair could be added to a yellow collection and a chair collection.  Dynamic collections look for specific filters to add assets to.
+
+You can navigate to the actor in the content browser while in the details window by clicking on the find button for that specific component.  You can also lock the window to make clicking find open a new window to that asset.
+
+#### Details Panel
+
+The details panel gives you information about an actor that you currently have selected.  
+
+![Details Panel](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/DetailsPanel.PNG)
+
+At the top is the name of the actor.  There are also buttons for adding components and turning the currently selected actor into a blueprint.
+
+The property matrix allows you to edit the value of multiple actors at once.
+
+The transform component is common to all actors.  It provides you another way to modify actors in your level.  The yellow arrows to the right of the values will reset the values to a default.  You can change how the values are modified relative to the world or parent by selecting the dropdown on the property.  The mobility category allows you to change the type of the actor.
+
+#### World Outliner Panel
+
+The world outliner panel is an organized list of all actors in the level.  
+
+![World Outliner Panel](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/WorldOutlinerPanel.PNG)
+
+The eye icon to the left of the actor allows you to toggle the visibility of it.  The icon will tell you what type of mobility the asset has as well as which category it is in.
+
+You can drag actors onto other actors by dragging them onto other actors.  This means that when you move the parent it will move all the children.  Additionally, you can group actors by selecting and hitting ctrl + g.  Groups can be locked/unlocked to allow for individual editing of actors within a group.
+
