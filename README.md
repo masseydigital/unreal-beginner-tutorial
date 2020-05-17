@@ -362,3 +362,32 @@ You can create blueprint classes from actors that exist in your level.  A constr
 ### Timelines
 
 Timeline nodes help you create sequential animations.  They are a graph format where parameters are able to be modified over a given period of time.
+
+## Players & Input
+
+### Game Modes
+
+Game modes enforce a set of rules based on the level that is loaded.  This is done from the Game Mode Basic Blueprint Class.  There are several parameters that come preset with a game mode class.
+
+![Game Mode Details](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/GameModeDetails.PNG)
+
+The default game mode can be set in the Edit > Project Settings > Maps and Modes > Default Game Mode.
+
+### Pawns
+
+A pawn is an actor that can be controlled either by a human player or a computer.
+
+### Characters
+
+A character is a type of pawn.  In addition to pawn properties, they have bipedal movement (such as humans).  They come with a few extra components.
+
+### Controllers
+
+A controller is an actor that is used to possess a pawn to control its movement and action.  There are human and ai controllers that can be used.
+
+### Input Mapping
+
+Input mapping allows you to map keys to behaviors across multiple player controllers.
+
+Action mappings are useful for button presses.  Axis mapping is useful for inputs that are continuous.
+
