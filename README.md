@@ -275,3 +275,90 @@ In UE, a volume is a 3D area of space and is invisible to the player.  They have
 Trigger volumes are a highly useful volume that can be used to activate certain events when the player enters an area.
 
 Pain Causing Volumes have the player take damage when they enter the volume.  Damage is a built-in construct for UE.
+
+## Blueprints
+
+### Blueprint Editor
+
+Blueprints allow you to specify game logic such as tracking health, tracking game state, etc.
+
+There are two main types:
+
+1. Level Blueprints: Data and instructions for a particular level, i.e. time, keys, etc.
+2. Blueprint Classes: A way to turn any Actor or asset into a blueprint (similar to prefabs in Unity)
+
+Blueprint classes can be used to create as many copies (instances) that you want.  They are stored in the content browser.
+
+You can open the level blueprint editor by selecting it in the top toolbar under Blueprints.
+
+![Level Blueprint Editor](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/LevelBlueprintEditor.PNG)
+
+The event graph that is in the center of the blueprint editor allows for visual scripting and also allows programmers to add C++ code.  It is a node based system where each node has a specific purpose.
+
+The Event BeginPlay node is a node that occurs when gameplay begins.  The Event Tick node happens every "tick" of gameplay.
+
+Function nodes are light blue and have a fancy f icon.  In blueprints, a function node is a node that performs a specific task.
+
+![DelayFunctionNode](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/DelayFunctionNode.PNG)
+
+Icons on the node are called pins.  Left side are called input pins and right side are called output pins.  Execution nodes denote the begin and end of the node.
+
+### Variables
+
+Variables can be used in UE to store data.  Variables can store numbers, text, etc.  They can be created in the Blueprint Editor by hitting the + sign under the Variables tab.
+
+You can change the type of the variable by clicking the icon next to the name and selecting the type that you would like to use.
+
+![VariableMenu](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/VariableMenu.PNG)
+
+Once you create a get variable you need to compile the blueprint in order to be able to change the default value.  You can also create a set variable to set the value of a variable.  Once you set it, you can add it to the execution flow.
+
+Tooltips can be added to the variables in order to provide a description of what that variable means.
+
+Categories can be added to organize variables into groups.
+
+Ranges can be added to keep a variable within a minimum or maximum range. 
+
+### Arrays
+
+Arrays let you store multiple values into one data type.  Any variable can be changed into an array by selecting the array option after clicking on the icon next to variable type.
+
+![ArraySelection](https://github.com/masseydigital/unreal-beginner-tutorial/blob/master/imgs/ArraySelection.PNG)
+
+Arrays have a variety of nodes that can be used to add, remove, insert, and modify values.  
+
+### Functions
+
+Functions are a specific procedure or routine meant to undertake the given task or series of tasks.  UE has functions in the form of node graphs.  Functions help provide reusable logic.
+
+When a function is created, it starts with an entry node.  You can add inputs and outputs through the details pane.
+
+The return node is the last node in the function and contains pins for each of your outputs.
+
+### Flow control
+
+Flow control is a set of nodes that help you control execution of your node graphs.  
+
+A branch node takes in a boolean value and then executes code based on the input.  This is similar to an if statement.
+
+Typing in "=" will show you all of the nodes that check for equality between two types including primitives like integers and also other more complex data types such as color.
+
+The do n node will perform an action a number of times before blocking execution.  The do once node is similar but will only perform the action once before requiring the reset pin.
+
+The flip flop node will flip between the a pin and b pin each time execution flows through the node.
+
+The for loop node lets you choose your start and end index.
+
+The gate node and multi-gate node allow you to specify conditions in which execution will travel through the gate.
+
+The While loop gate will continuously perform an action when a given condition is true.
+
+The switch node will follow a control based on the value of an input variable.
+
+### Classes
+
+You can create blueprint classes from actors that exist in your level.  A construction script is executed when your actor is created.
+
+### Timelines
+
+Timeline nodes help you create sequential animations.  They are a graph format where parameters are able to be modified over a given period of time.
