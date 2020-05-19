@@ -391,3 +391,16 @@ Input mapping allows you to map keys to behaviors across multiple player control
 
 Action mappings are useful for button presses.  Axis mapping is useful for inputs that are continuous.
 
+## Collisions
+
+Triggers are common functionality that can be used to determine when a player overlaps with an area in the level.
+
+A few nodes that can be used for that functionality are OnActorBeginOverlap and OnActorEndOverlap.
+
+Each actor will have a set of collision properties that can be modified.  Additionally, custom collisions can be set using the Collision Presets dropdown options.
+
+The Event hit node can be used to fire an event when two physics objects collide.  There are several options that can be used to return data on the collision.
+
+A common workflow is to abstract the damage applied vs the damage received to allow for custom values to be used.  There is an Apply Damage node that helps with adding that functionality.
+
+An invincibility feature can be created by adding a do once and a delay node to prevent the player from taking damage for a short amount of time.
